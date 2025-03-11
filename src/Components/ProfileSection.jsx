@@ -12,6 +12,7 @@ const ProfileSection = () => {
   const [image, setImage] = useState("")
   const role = "user";
   const [isSending, setIsSending] = useState(false)
+  const [updated, setUpdated] = useState(false)
   const [currentData, setCurrentData] = useState([{
     name:"",
     email:"",
@@ -39,7 +40,8 @@ const ProfileSection = () => {
     }).then((res)=>{
       console.log(res)
       setIsSending(false)
-      location.reload(true)
+      setOpen(false)
+      setUpdated(true)
     }).catch((err)=>{
       console.log(err)
       setIsSending(false)
@@ -67,7 +69,7 @@ const ProfileSection = () => {
       }
     }
     fetchUserData()
-  }, [])
+  }, [updated])
   return (
     <section className="flex items-center justify-center gap-5 pt-20 pb-10">
       <div className="bg-secondary flex w-[500px] flex-col items-center justify-center rounded-lg p-5 min-h-[460px]">
