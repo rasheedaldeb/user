@@ -5,13 +5,14 @@ import {  Oval } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
+  const [showPass, setShowPass] = useState(false)
   // inputes data values
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("user");
+  const role = "user";
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSeccess] = useState("")
@@ -54,11 +55,11 @@ const RegisterForm = () => {
       className=" mt-20 flex w-full flex-col items-center gap-6"
       dir="rtl"
     >
-      <h2 className="text-secondary text-3xl font-bold">انشاء حساب جديد</h2>
+      <h2 className="text-white text-3xl font-bold">انشاء حساب جديد</h2>
       <form className="w-full" onSubmit={(e) => userRegister(e)}>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               الاسم
             </label>
             <input
@@ -71,7 +72,7 @@ const RegisterForm = () => {
             />
           </div>
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               البريد الالكتروني
             </label>
             <input
@@ -84,7 +85,7 @@ const RegisterForm = () => {
             />
           </div>
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               رقم الهاتف
             </label>
             <input
@@ -98,18 +99,25 @@ const RegisterForm = () => {
             />
           </div>
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               كلمة المرور
             </label>
-            <input
+           <div className="border-primary w-full rounded-3xl border bg-gray-100 h-[55px]
+           flex items-center justify-between px-4
+           text-lg text-gray-800 transition-all outline-none focus:bg-gray-100">
+           <input
               name="password"
-              type="password"
-              className="border-primary w-full rounded-3xl border bg-gray-100 px-4 py-3 text-lg text-gray-800 transition-all outline-none focus:bg-gray-100"
+              type={showPass ?  "text": "password"}
+              className="w-[80%] h-full outline-none "
               placeholder="ضع كلمة مرور قوية"
               required
               minLength={8}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <img src={showPass ? "/public/images/eye.png": "/images/closed-eye.png"} alt="eye" 
+            onClick={()=> setShowPass(!showPass)}
+            className="cursor-pointer"/>
+           </div>
           </div>
         </div>
           <div className="image flex w-full items-center justify-around py-5">

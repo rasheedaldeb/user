@@ -4,6 +4,7 @@ import { Oval } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
+  const [showPass, setShowPass] = useState(false)
   // signin states
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -46,13 +47,13 @@ const SignInForm = () => {
   }
   return (
     <section className="mt-10 flex w-full flex-col items-center gap-8" dir="rtl">
-      <h2 className="text-secondary text-3xl font-bold">
+      <h2 className="text-white text-3xl font-bold">
         تسجيل الدخول الى الحساب
       </h2>
       <form className="w-1/2" onSubmit={(e)=> userSignin(e)}>
         <div className="grid grid-cols-1 gap-6">
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               البريد الالكتروني
             </label>
             <input
@@ -65,17 +66,25 @@ const SignInForm = () => {
             />
           </div>
           <div>
-            <label className="text-secondary mb-2 block text-lg font-bold">
+            <label className="text-white mb-2 block text-lg font-bold">
               كلمة المرور
             </label>
-            <input
+            <div className="border-primary w-full rounded-3xl border bg-gray-100 h-[55px]
+           flex items-center justify-between px-4
+           text-lg text-gray-800 transition-all outline-none focus:bg-gray-100">
+           <input
               name="password"
-              type="password"
-              className="border-primary w-full rounded-3xl border bg-gray-100 px-4 py-3 text-lg text-gray-800 transition-all outline-none "
-              placeholder="ضع كلمة المرور "
+              type={showPass ?  "text": "password"}
+              className="w-[80%] h-full outline-none "
+              placeholder="ضع كلمة مرور قوية"
               required
-              onChange={(e)=> setPassword(e.target.value)}
+              minLength={8}
+              onChange={(e) => setPassword(e.target.value)}
             />
+            <img src={showPass ? "/public/images/eye.png": "/images/closed-eye.png"} alt="eye" 
+            onClick={()=> setShowPass(!showPass)}
+            className="cursor-pointer"/>
+           </div>
           </div>
           {error ? <div className="text-xl text-red-600 flex items-center justify-center">
             {error}

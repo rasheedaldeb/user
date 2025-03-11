@@ -56,11 +56,11 @@ const NavBar = () => {
           </li>}
         </ul>
       </div>
-      <input
+      {token && <input
         type="text"
         className="bg-primary w-[500px] rounded-3xl px-4 py-3 text-lg text-white transition-all outline-none"
         placeholder="بحث"
-      />
+      />}
       {token ? <button onClick={ logout}  className="bg-secondary cursor-pointer rounded-lg px-5 py-3 text-white">
           {isLoggingOut ? <Oval
           visible={true}

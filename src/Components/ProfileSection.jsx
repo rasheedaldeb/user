@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Oval } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 const ProfileSection = () => {
+  const [showPass, setShowPass] = useState(false)
   const [open, setOpen] = useState(false);
   // user data array
   const userId = localStorage.getItem("userId")
@@ -160,12 +161,19 @@ const ProfileSection = () => {
               <label className="text-white mb-2 block text-lg font-bold">
                 كلمة المرور
               </label>
-              <input type="password" 
+              <div className="border-primary w-full rounded-3xl border bg-gray-100 px-4 h-[55px]
+              flex items-center justify-between
+               text-lg text-gray-800 transition-all outline-none focus:bg-gray-100">
+              <input type={showPass ?  "text": "password"}
               placeholder=" ادخل الرمز الجديد"
               onChange={(e)=>{
                 setCurrentData({...currentData, password:e.target.value})
               }}
-               className="border-primary w-full rounded-3xl border bg-gray-100 px-4 py-3 text-lg text-gray-800 transition-all outline-none focus:bg-gray-100"/>
+               className="w-[80%] h-full outline-none"/>
+               <img src={showPass ? "/public/images/eye.png": "/images/closed-eye.png"} alt="eye" 
+               onClick={()=> setShowPass(!showPass)}
+               className="cursor-pointer" />
+              </div>
             </div>
             <div className="phone">
             <label className="text-white mb-2 block text-lg font-bold">
