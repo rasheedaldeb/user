@@ -59,6 +59,7 @@ const ProfileSection = () => {
         setIsSending(false);
       });
   };
+  // fetch user profile api request
   const navigate = useNavigate();
   useEffect(() => {
     const fetchUserData = async () => {

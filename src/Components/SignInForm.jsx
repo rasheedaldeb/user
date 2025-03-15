@@ -16,7 +16,7 @@ const SignInForm = () => {
   const userSigninData = new FormData();
   userSigninData.append("email", email);
   userSigninData.append("password", password);
-  // signin api logic
+  // signin api request
   const userSignin = async (e) => {
     e.preventDefault();
     setIsSignningIn(true);

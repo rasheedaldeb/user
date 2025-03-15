@@ -1,6 +1,6 @@
 import React from "react";
 
-const Categories = () => {
+const TypeButtons = () => {
   return (
     <div className="buttons flex items-center justify-between">
       <button className="border-primary flex cursor-pointer items-center gap-2 rounded-lg border px-5 py-2">
@@ -23,4 +23,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default TypeButtons;

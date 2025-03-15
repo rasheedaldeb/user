@@ -1,8 +1,7 @@
 import React from "react";
-import SectionHeader from "./SectionHeader";
 import Filters from "./Filters";
-import Categories from "./Categories";
 import EstatesCards from "./EstatesCards";
+import TypeButtons from "./TypeButtons";
 
 const Estates = () => {
   return (
@@ -12,7 +11,7 @@ const Estates = () => {
         <Filters />
         {/* categories and cards section */}
         <div className="flex w-[70%] flex-col gap-5">
-          <Categories />
+          <TypeButtons />
           <EstatesCards />
         </div>
       </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Oval } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
-
+import "./All.css";
 const RegisterForm = () => {
   const [showPass, setShowPass] = useState(false);
   // inputes data values
@@ -25,7 +25,7 @@ const RegisterForm = () => {
   userData.append("phone", number);
   userData.append("role", role);
   userData.append("profileImageUrl", image);
-  // register function
+  // register api request
   const userRegister = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);

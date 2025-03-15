@@ -15,7 +15,6 @@ const SingleEstateSection = () => {
   return (
     <section className="estate-images mt-10 flex h-full w-[45%] flex-col items-center gap-12">
       {/* Estate images */}
-
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",

@@ -6,6 +6,7 @@ const NavBar = () => {
   const token = localStorage.getItem("token");
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const navigate = useNavigate();
+  // logout api request
   const logout = async () => {
     setIsLoggingOut(true);
     await axios
@@ -26,7 +27,8 @@ const NavBar = () => {
       })
       .catch((err) => {
         if (err.status === 401) {
-          localStorage.removeItem("token", "userId");
+          localStorage.removeItem("token");
+          localStorage.removeItem("userId");
           navigate("/signin");
         }
         console.log(err);
@@ -53,14 +55,24 @@ const NavBar = () => {
             </Link>
           </li>
           {token && (
-            <li>
-              <Link
-                to="/favorite"
-                className="border-secondary text-secondary pb-1 text-xl font-bold transition duration-500 hover:text-gray-300"
-              >
-                المفضلة
-              </Link>
-            </li>
+            <>
+              <li>
+                <Link
+                  to="/favorite"
+                  className="border-secondary text-secondary pb-1 text-xl font-bold transition duration-500 hover:text-gray-300"
+                >
+                  المفضلة
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/complaints"
+                  className="border-secondary text-secondary pb-1 text-xl font-bold transition duration-500 hover:text-gray-300"
+                >
+                  الشكاوي
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </div>

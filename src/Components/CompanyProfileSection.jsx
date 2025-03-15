@@ -3,7 +3,7 @@ import { useState } from "react";
 const CompanyProfileSection = () => {
   const [open, setOpen] = useState(false);
   return (
-    <section className="flex items-center justify-center gap-5 pt-20 pb-10">
+    <section className="flex w-[45%] items-center justify-center gap-5 pt-20 pb-10">
       <div className="bg-secondary flex w-[500px] flex-col items-center justify-center rounded-lg p-5">
         {/* user image and name */}
         <div className="top flex w-full flex-col items-center border-b border-white py-5">
