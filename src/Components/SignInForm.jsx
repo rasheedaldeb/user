@@ -62,7 +62,7 @@ const SignInForm = () => {
       <form className="w-1/2" onSubmit={(e) => userSignin(e)}>
         <div className="grid grid-cols-1 gap-6">
           <div>
-            <label className="mb-2 block text-lg font-bold text-white">
+            <label className="text-secondary mb-2 block text-lg font-bold">
               البريد الالكتروني
             </label>
             <input
@@ -75,7 +75,7 @@ const SignInForm = () => {
             />
           </div>
           <div>
-            <label className="mb-2 block text-lg font-bold text-white">
+            <label className="text-secondary mb-2 block text-lg font-bold">
               كلمة المرور
             </label>
             <div className="border-primary flex h-[55px] w-full items-center justify-between rounded-3xl border bg-gray-100 px-4 text-lg text-gray-800 transition-all outline-none focus:bg-gray-100">
@@ -107,10 +107,10 @@ const SignInForm = () => {
               {success}
             </div>
           )}
-          <div class="mt-5 flex items-center justify-between">
+          <div class="mt-5 flex w-full items-center justify-between">
             <p className="text-secondary flex items-center justify-center font-bold">
               ليس لديك حساب؟
-              <Link to="/register" className="text-white underline">
+              <Link to="/register" className="text-secondary underline">
                 انشاء حساب
               </Link>
             </p>
