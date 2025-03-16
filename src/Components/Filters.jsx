@@ -57,6 +57,12 @@ const Filters = () => {
           <option value="FR">300m -> 500m</option>
           <option value="DE">اكثر من 500m</option>
         </select>
+        <img
+          src="/images/filters.jpg"
+          alt="filter"
+          loading="lazy"
+          className="w-full rounded-br-lg rounded-bl-lg"
+        />
       </div>
     </div>
   );

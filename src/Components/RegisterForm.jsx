@@ -58,7 +58,7 @@ const RegisterForm = () => {
       className="mt-20 flex w-full flex-col items-center gap-6"
       dir="rtl"
     >
-      <h2 className="text-3xl font-bold text-white">انشاء حساب جديد</h2>
+      <h2 className="text-secondary text-3xl font-bold">انشاء حساب جديد</h2>
       <form className="w-full" onSubmit={(e) => userRegister(e)}>
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
