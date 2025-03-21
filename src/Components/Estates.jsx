@@ -1,6 +1,6 @@
 import React from "react";
 import Filters from "./Filters";
-import EstatesCards from "./EstatesCards";
+import EstatesCards from "./EstatesCards/EstatesCards";
 import TypeButtons from "./TypeButtons";
 
 const Estates = () => {

@@ -1,37 +1,23 @@
 import { Link } from "react-router-dom";
 
-const EstatesCard = () => {
+const EstatesCard = ({ postItem }) => {
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <div className="company flex items-center justify-between">
         <img src="/images/user.png" alt="company" />
-        <Link className="text-secondary text-xl">اسم الشركة</Link>
+        <Link className="text-secondary text-xl">{postItem.Account.name}</Link>
       </div>
       <div className="h-56 w-full">
-        <a href="#">
-          <img
-            className="mx-auto h-full dark:hidden"
-            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
-            alt=""
-          />
-          <img
-            className="mx-auto hidden h-full dark:block"
-            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
-            alt=""
-          />
-        </a>
+        <img
+          className="mx-auto h-full dark:hidden"
+          src={`${import.meta.env.VITE_API_URL}${postItem.mainImageUrl}`}
+          alt="postImg"
+        />
       </div>
       <div className="pt-6">
-        <a
-          href="#"
-          className="text-lg leading-tight font-semibold text-gray-900 hover:underline dark:text-white"
-        >
-          Apple iMac 27", 1TB HDD, Retina 5K Display, M3 Max
-        </a>
-
         <div className="mt-4 flex items-center justify-between gap-4">
           <p className="text-2xl leading-tight font-extrabold text-gray-900 dark:text-white">
-            $1,699
+            ${postItem.salePrice}
           </p>
 
           <button
